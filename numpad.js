@@ -2,6 +2,7 @@ let display = document.getElementById('display');
 let history = document.getElementById('history');
 let display_reset = false;
 let fresh_answer = false;
+let prev_answer = undefined;
 
 let buttons = Array.from(document.getElementsByClassName('buttons'));
 
@@ -47,6 +48,10 @@ buttons.map( button => {
             case '~':
                 display.innerText = '~' + display.innerText; 
                 fresh_answer = false; break;
+            case 'ANS':
+                if (fresh_answer) display.innerText = '';
+                if (prev_answer) display.innerText += prev_answer;
+                fresh_answer = false; break;
             case 'log':
                 if (fresh_answer) display.innerText = ''; // optionally, this string could be '*' (and do += )if the user wants to mult by ANS
                 display.innerText += 'Math.log2('; 
@@ -77,6 +82,7 @@ buttons.map( button => {
                     display.innerText = result;
                     history.innerHTML = "<br>" + history.innerHTML;
                     history.innerHTML = equation + result + history.innerHTML;
+                    prev_answer = result;
                     fresh_answer = true; break;
                 } catch {
                     display.innerText = 'ERR';
