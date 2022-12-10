@@ -1,0 +1,92 @@
+@import 'main.css';
+
+.numpad {
+    font-size: 150%;
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 70%;
+    margin: 2% auto;
+    box-shadow: 0 0 40px 8px var(--navbar2);
+    overflow: hidden;
+    padding: 1%;
+}
+
+.buttons {
+    float: left;
+    min-width: 49%;
+    
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.button {
+    border: .5px solid var(--lining);
+    line-height: 9vh;
+    text-align: center;
+    font-size: 150%;
+    cursor: pointer;
+}
+
+.output {
+    float: right;
+    min-width: 49%;
+    text-align: right;
+
+    border: 1px solid var(--lining);
+}
+
+#display {
+    height: 9vh;
+    
+    padding-right: 1%;
+    line-height: 9vh;
+    font-size: 170%;
+    border: 1px solid var(--lining);
+}
+
+#history {
+    height: 45vh;
+    line-height: 4vh;
+    font-size: 170%;
+    overflow: auto;
+    padding-right: 1%;
+}
+
+
+
+
+.operand {
+    background-color: var(--hover);
+    border: .5px solid var(--lining);
+    line-height: 9vh;
+    text-align: center;
+    font-size: 150%;
+    cursor: pointer;
+}
+
+.func {
+    background-color: var(--func);
+    border: .5px solid var(--lining);
+    line-height: 9vh;
+    text-align: center;
+    font-size: 150%;
+    cursor: pointer;
+}
+
+.operand:hover {
+    background-color: var(--bg);
+    transition: .3s ease-in-out;
+}
+
+.button:hover {
+    background-color: var(--hover);
+    transition: .3s ease-in-out;
+}
+
+.func:hover {
+    background-color: var(--navbar);
+    transition: .3s ease-in-out;
+}
+
+#equal {
+    background-color: var(--navbar);
+}

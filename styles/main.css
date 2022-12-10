@@ -1,0 +1,36 @@
+:root {
+    --bg: #12100E;
+    --navbar: #6B654B;
+    --navbar2: #D4DF9E;
+    --lining: #C6C5B9;
+    --hover: #1E1B18;
+    --func: #4f4b37;
+}
+
+* {
+    color: white;
+    background-color: var(--bg);
+    font-family: var(--lucida);
+    font-size: 18px;
+    text-decoration: none;
+    scrollbar-color: var(--func) var(--hover);
+}
+
+.navbar {
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+.navbar a {
+    text-align: center;
+    padding: 5%;
+    margin: 10% 0;
+    background-color: var(--navbar);
+    font-size: 150%;
+}
+
+.navbar a:hover {
+    background-color: var(--navbar2);
+    color: #000;
+}
