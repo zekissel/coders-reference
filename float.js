@@ -3,24 +3,45 @@ let bytes = Array.from(document.getElementsByClassName('bitfield'));
 
 bytes.map (hex => {
 
-    let mask = /[0-9A-Fa-f]/;
+    let mask = /^[0-9A-Fa-f]+$/;
 
     hex.addEventListener('keyup', (e) => {
 
+        console.log(e.key);
+
         if (e.key == 'Shift' || e.key == 'Tab') return;
 
-        if (e.key == 'Backspace') {
+        else if (e.key == 'Backspace') {
+            if (e.target.value != '') e.target.value = '';
             let prev = e.target.previousSibling.previousSibling;
             if (prev) prev.focus();
         }
 
-        else if (e.target.value) {
+        else if (e.key == 'ArrowLeft') {
+            let prev = e.target.previousSibling.previousSibling;
+            if (prev) prev.focus();
+        }
 
-            if (e.target.value != e.key) {
-                if (mask.test(e.key)) e.target.value = e.key;
-            }
-            let next = e.target.nextSibling.nextSibling;    // because of whitespace in HTML
+        else if (e.key == 'ArrowRight') {
+            let next = e.target.nextSibling.nextSibling;
             if (next) next.focus();
+        }
+
+        else if (e.key == "Delete") {
+            let next = e.target.nextSibling.nextSibling;
+            if (next) next.focus();
+        }
+
+        else if (e.target.value != '') {
+
+            if (mask.test(e.key)) {
+                if (e.target.value != e.key) {
+                    e.target.value = e.key;
+                }
+                let next = e.target.nextSibling.nextSibling;    // 2 nexts because of whitespace in HTML
+                if (next) next.focus();
+            }
+            
         }
 
         hexademical.innerText = getHex(); // fix this
