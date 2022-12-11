@@ -1,6 +1,7 @@
-let bits = Array.from(document.getElementsByClassName('bitfield'));
+let hexademical = document.getElementById('hexadecimal');
+let bytes = Array.from(document.getElementsByClassName('bitfield'));
 
-bits.map (hex => {
+bytes.map (hex => {
 
     let mask = /[0-9A-Fa-f]/;
 
@@ -22,7 +23,20 @@ bits.map (hex => {
             if (next) next.focus();
         }
 
+        hexademical.innerText = getHex(); // fix this
+
     });
 
 });
+
+function getHex () {
+    let full_hex = '0x';
+    for (let byte of bytes) {
+        for (let child of byte.children) {
+            full_hex += child.value;
+            if (child.value == '') full_hex += '0';
+        }
+    }
+    return full_hex;
+}
 
