@@ -1,5 +1,10 @@
 @import 'main.css';
 
+:root {
+    --exp: #20271E;
+    --sig: #261D25;
+}
+
 .floats {
     font-size: 150%;
     font-family: 'Courier New', Courier, monospace;
@@ -14,17 +19,32 @@
     text-align: center;
 }
 
+.sig {
+    max-width: 2vw;
+    max-height: 2vw;
+    text-align: center;
+    font-size: 200%;
+    background-image: linear-gradient(to right, var(--sig) , var(--exp));
+}
+
+.exp {
+    max-width: 2vw;
+    max-height: 2vw;
+    text-align: center;
+    font-size: 200%;
+    background-color: var(--exp);
+}
+
 .hex {
     max-width: 2vw;
     max-height: 2vw;
     text-align: center;
-    background-color: var(--hover);
     font-size: 200%;
+    background-color: var(--hover);
 }
 
 .output {
     text-align: center;
-    max-width: 65%;
     margin: 0 auto;
 }
 
