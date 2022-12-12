@@ -28,13 +28,13 @@
     margin: 0 auto;
 }
 
-#decimal input{
+#decimal {
     background-color: var(--hover);
     font-size: 200%;
     float: left;
 }
 
-#hexadecimal input{
+#hexadecimal {
     background-color: var(--hover);
     font-size: 200%;
     float: right;

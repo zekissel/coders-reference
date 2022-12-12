@@ -1,4 +1,9 @@
 let hexademical = document.getElementById('hexadecimal');
+hexademical.value = '0x0000000000000000';
+
+let demical = document.getElementById('decimal');
+decimal.value = '0';
+
 let bytes = Array.from(document.getElementsByClassName('bitfield'));
 
 bytes.map (hex => {
@@ -28,6 +33,7 @@ bytes.map (hex => {
         }
 
         else if (e.key == "Delete") {
+            if (e.target.value != '') e.target.value = '';
             let next = e.target.nextSibling.nextSibling;
             if (next) next.focus();
         }
@@ -44,7 +50,7 @@ bytes.map (hex => {
             
         }
 
-        hexademical.innerText = getHex(); // fix this
+        hexademical.value = getHex();
 
     });
 
