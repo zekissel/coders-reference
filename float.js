@@ -54,7 +54,7 @@ bytes.map (hex => {
 
         let val = getHex();
         hexademical.value = '0x' + val;
-        console.log(toDecimal(val));
+        decimal.value = toDecimal(val);
 
     });
 
