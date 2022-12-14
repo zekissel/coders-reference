@@ -56,9 +56,16 @@
     min-width: 40%;
 }
 
-#hexadecimal {
+.hexpre p {
     background-color: var(--hover);
     font-size: 200%;
+    float: right;
+    
+}
+
+#hexadecimal {
+    background-color: var(--hover);
+    font-size: 100%;
     float: right;
     max-width: 38%;
     min-width: fit-content;

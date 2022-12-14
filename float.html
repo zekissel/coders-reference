@@ -55,8 +55,8 @@
                         <input id="decimal">
                     </div>
 
-                    <div>
-                        <input id="hexadecimal" maxlength="18">
+                    <div class="hexpre">
+                        <p>0x<input id="hexadecimal" maxlength="18" onkeydown="return /[0-9a-fA-f]/.test(event.key)"></p>
                     </div>
                 </div>
             </div>

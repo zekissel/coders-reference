@@ -1,7 +1,5 @@
-
-
 let hexademical = document.getElementById('hexadecimal');
-hexademical.value = '0x0000000000000000';
+hexademical.value = '0000000000000000';
 
 let demical = document.getElementById('decimal');
 decimal.value = '0';
@@ -53,11 +51,17 @@ bytes.map (hex => {
         }
 
         let val = getHex();
-        hexademical.value = '0x' + val;
+        hexademical.value = val;
         decimal.value = toDecimal(val);
 
     });
 
+});
+
+decimal.addEventListener('keyup', (e) => {
+    let num = parseFloat(e.target.value);
+
+    console.log(num.toString(16));
 });
 
 function toDecimal (hex) {
